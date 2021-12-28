@@ -3,13 +3,13 @@
 original = input("Enter the file which contains the domains: ")
 output = input("Enter the output file: ")
 modifier = input("Enter the modifier to append (minus the $): ")
-lines = open(original).read().split("\n")
+lines = open(original,encoding="UTF-8").read().split("\n")
 endarr = ""
 
 for line in lines:
 	endarr += "{}${}\n".format(line.replace("	","").replace(" ",""),modifier)
 
-with open(output,"w") as f:
+with open(output,"w",encoding="UTF-8") as f:
 	f.write(endarr)
 	f.close()
 print("All done")
